@@ -16,7 +16,7 @@ namespace superHeroApp
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/core/bootstrap-material-design.min.js", 
-                      "~/Scripts/core/material-kit.js"));
+                      "~/Scripts/material-kit.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/material-kit.css", "~/Content/demo/demo.css"));

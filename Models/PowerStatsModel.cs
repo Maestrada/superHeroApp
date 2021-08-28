@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace superHeroApp.Models
 {
+    [DataContract ]
     public class PowerStatsModel
     {
-        public int Intelligence { get; set; }
-        public int Strength { get; set; }
-        public int Speed { get; set; }
-        public int Durability { get; set; }
-        public int Power { get; set; }
-        public int Combat { get; set; }
+        [DataMember(Name = "stringelligence")]
+        public string stringelligence { get; set; }
+        [DataMember(Name = "strength")]
+        public string Strength { get; set; }
+        [DataMember(Name = "speed")]
+        public string Speed { get; set; }
+        [DataMember(Name = "durability")]
+        public string Durability { get; set; }
+        [DataMember(Name = "power")]
+        public string Power { get; set; }
+        [DataMember(Name = "combat")]
+        public string Combat { get; set; }
     }
 }

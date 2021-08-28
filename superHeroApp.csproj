@@ -46,9 +46,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NotFoundMvc, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NotFoundMvc.1.5.0\lib\net40\NotFoundMvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -128,7 +135,10 @@
     <Compile Include="Models\ConnectionsModel.cs" />
     <Compile Include="Models\HeroModel.cs" />
     <Compile Include="Models\BiographyModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\PowerStatsModel.cs" />
+    <Compile Include="Models\RequestAccess\RequestAccess.cs" />
+    <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\WorkModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -336,7 +346,9 @@
     <Content Include="Content\scss\material-kit\_variables.scss" />
     <None Include="packages.config" />
     <Content Include="Scripts\material-kit.js.map" />
-    <Content Include="Views\Home\_result.cshtml" />
+    <Content Include="Views\Home\_resultSearch.cshtml" />
+    <Content Include="Views\Home\_heroSearch.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
