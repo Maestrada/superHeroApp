@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace superHeroApp.Controllers
 {
@@ -35,6 +36,7 @@ namespace superHeroApp.Controllers
         }
 
         [Route("character/{heroId}")]
+        [OutputCache(Duration = 3600, VaryByParam = "heroId", Location = OutputCacheLocation.Client, NoStore = true)]
         public async Task<ActionResult> GetHeroById(int heroId,string lastSearch)
         {
             string response = await requestAccess.GetHero(heroId);
