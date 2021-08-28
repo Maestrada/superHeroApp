@@ -16,6 +16,11 @@ namespace superHeroApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // remove all view engines registered in application
+            ViewEngines.Engines.Clear();
+
+            // add Razor view engine
+            ViewEngines.Engines.Add(new RazorViewEngine());
         }
     }
 }

@@ -19,8 +19,9 @@ namespace superHeroApp.Controllers
             requestAccess = new RequestAccess();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
+            this.ViewBag.Search = search; 
             return View();
         }
 
@@ -29,13 +30,21 @@ namespace superHeroApp.Controllers
           string response = await requestAccess.SearchHero(search);
             ResultModel result = JsonConvert.DeserializeObject<ResultModel>(response);
             List<HeroModel> model = result.Results;
+            this.ViewBag.SearchString = search;
             return View("_resultSearch", model);
         }
 
-        [Route("/character/{heroId}")]
-        public ActionResult GetHeroById(int heroId)
+        [Route("character/{heroId}")]
+        public async Task<ActionResult> GetHeroById(int heroId,string lastSearch)
         {
-            return View("_heroSearch");
+            string response = await requestAccess.GetHero(heroId);
+            HeroModel model = JsonConvert.DeserializeObject<HeroModel>(response);
+            this.ViewBag.LastSearch = lastSearch;
+            if (model.Id == 0)
+            {
+                return View("NotFound");
+            }
+            return View("_heroSearch",model);
         }
     }
 }

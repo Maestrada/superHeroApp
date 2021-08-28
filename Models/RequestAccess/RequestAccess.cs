@@ -29,5 +29,15 @@ namespace superHeroApp.Models.RequestAccess
             result = await sr.ReadToEndAsync();
             return result;
         }
+
+        public async Task<string> GetHero(int id)
+        {
+            string result = "";
+            WebRequest oRequest = WebRequest.Create("https://superheroapi.com/api/" + WebConfigurationManager.AppSettings["heroToken"] + "/" + id);
+            WebResponse oResponse = oRequest.GetResponse();
+            StreamReader sr = new StreamReader(oResponse.GetResponseStream());
+            result = await sr.ReadToEndAsync();
+            return result;
+        }
     }
 }

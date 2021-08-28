@@ -1,5 +1,9 @@
 ﻿window.addEventListener("load", function (ev) {
 
+    if ($(".input-search").val().trim()) {
+        searchHero();
+    }
+
     $("body").on("click", ".bt-show-more", function (ev) {
         let $this = $(this);
         let id = $this.attr("data-id");
@@ -44,17 +48,27 @@
             return;
         }
 
+        $(".div-search").empty()
+        $(".div-search").addClass("loading loading--full-height");
+
         $.ajax({
             type: "Post",
             url: "Home/SearchHero",
             data: { 'search': hero },
             contentType: "application/x-www-form-urlencoded;charset=utf-8",
         })
-        .done(function (data) {
-            $(".div-search").html(data);
-        })
-        .fail(function (a, b, c) {
-            alert("An error was occurred, please try again later.")
-        });
+            .always(function (a, b, c) {
+                $(".div-search").removeClass("loading loading--full-height");
+            })
+            .done(function (data) {
+                $(".div-search").html(data);
+                setTimeout(function (ev) {                   
+                    // Activate tooltips
+                    $('[data-toggle="tooltip"]').tooltip();
+                }, 500);
+            })
+            .fail(function (a, b, c) {
+                alert("An error was occurred, please try again later.")
+            });
     }
 })

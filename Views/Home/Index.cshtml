@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    string search = this.ViewBag.Search;
 }
 
 <div class="row">
@@ -7,13 +8,13 @@
         <h2>Looking for your favorite hero</h2>
         <div class="row">
             <div class="col-lg-10 col-sm-12">
-                <input type="text" class="form-control input-search" placeholder="Search">
+                <input type="text" class="form-control input-search" placeholder="Search" value="@search">
             </div>
             <div class="col-lg-2 col-sm-12">
-                <button class="btn btn-primary btn-raised btn-fab btn-round bt-search"  data-toggle="tooltip" data-placement="bottom" title="Search" data-container="body">
+                <button class="btn btn-primary btn-raised btn-fab btn-round bt-search" data-toggle="tooltip" data-placement="bottom" title="Search" data-container="body">
                     <i class="material-icons">search</i>
                 </button>
-                <button class="btn btn-rose btn-raised btn-fab btn-round bt-clear"  data-toggle="tooltip" data-placement="bottom" title="Clear search bar and results" data-container="body">
+                <button class="btn btn-rose btn-raised btn-fab btn-round bt-clear" data-toggle="tooltip" data-placement="bottom" title="Clear search bar and results" data-container="body">
                     <i class="fa fa-times"></i>
                 </button>
             </div>
@@ -22,15 +23,18 @@
                     <div class="container">
                         <div class="alert-icon">
                             <i class="material-icons">warning</i>
-                        </div>                      
+                        </div>
                         <b>Warning:</b> Please enter a hero to search!
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12 div-search">        
-      
+    <div class="col-md-12 div-search">
+
     </div>
 </div>
-<script src="~/Scripts/appScript/index.js"></script>
+@section scripts
+{
+    <script src="~/Scripts/appScript/index.js"></script>
+}

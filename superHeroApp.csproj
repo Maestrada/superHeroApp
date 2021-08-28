@@ -150,6 +150,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\material-kit.css.map" />
+    <Content Include="Scripts\appScript\heroSearch.js" />
     <Content Include="Scripts\appScript\index.js" />
     <Content Include="Scripts\core\bootstrap-material-design.min.js" />
     <Content Include="Scripts\core\jquery.min.js" />

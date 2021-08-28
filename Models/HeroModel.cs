@@ -17,6 +17,8 @@ namespace superHeroApp.Models
             this.Connections = new ConnectionsModel();
             this.Image = new ImageModel();
         }
+        [DataMember(Name = "response")]
+        public string Response { get; set; }
         [DataMember(Name = "id")]
         public int Id { get; set; }
         [DataMember(Name = "name")]
