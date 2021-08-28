@@ -10,16 +10,27 @@
     <title>@ViewBag.Title - My Hero App</title>
     @Styles.Render("~/Content/css")
 </head>
-<body>
+<body class="index-page sidebar-collapse">
     <button onclick="topFunction()" id="myBtn" class="btn btn-rose" title="Go to top"><i class="fa fa-arrow-circle-up"></i></button>
-    <div class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar">
+    <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
         <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink(" Search Hero App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand  fa fa-address-book" })
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="@Url.Content("~")">Search Hero App</a>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url(&quot;@Url.Content("~")Content/image/bg.jpg&quot;); transform: translate3d(0px, 0px, 0px);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h3>Enjoy the experience </h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="main main-raised">
         @RenderBody()
 
     </div>

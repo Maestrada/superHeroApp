@@ -144,6 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\demo\demo.css" />
+    <Content Include="Content\image\bg.jpg" />
+    <Content Include="Content\image\saitama-one-punch-man-.jpg" />
     <Content Include="Content\material-kit.css" />
     <Content Include="Content\material-kit.min.css" />
     <Content Include="favicon.ico" />
